@@ -1,0 +1,319 @@
+[{
+	"id": "1dc820885118cf7177da7b8c38",
+	"class": "sheet",
+	"title": "画布 1",
+	"rootTopic": {
+		"id": "b9aa22deba98b3b20c7ac8aca2",
+		"class": "topic",
+		"title": "Lighten",
+		"structureClass": "org.xmind.ui.map.unbalanced",
+		"children": {
+			"attached": [{
+				"id": "b58888b5ceebbf0e68dada0656",
+				"title": "开始做图",
+				"children": {
+					"attached": [{
+						"title": "新建同级主题",
+						"id": "43b55ae2-c6e0-442c-ac7a-673fdb2593ac",
+						"children": {
+							"attached": [{
+								"title": "点击右下角的图标",
+								"id": "b89f0114-100c-4eaf-8b87-c6b4e15016cd"
+							}]
+						}
+					}, {
+						"title": "新建子主题",
+						"id": "7ecb9199-3a83-427e-95d5-240c37ca37d5",
+						"children": {
+							"attached": [{
+								"title": "点击左下角的图标",
+								"id": "c2b0f449-65fc-451b-a5c5-d62b56a19310"
+							}]
+						}
+					}, {
+						"title": "双击主题编辑文字",
+						"id": "1d78ea5f-02d0-4d30-811f-33b5e8faf6c0"
+					}, {
+						"title": "改变主题顺序",
+						"id": "f839ba91-5544-42e7-a976-781a96d04256",
+						"children": {
+							"attached": [{
+								"title": "长按之后拖动",
+								"id": "21f5036c-25b4-4975-96ce-c4d0cd81617b"
+							}]
+						}
+					}]
+				}
+			}, {
+				"id": "193b56735e689ae86a01d91513",
+				"title": "使用上下文菜单",
+				"children": {
+					"attached": [{
+						"title": "折叠",
+						"id": "c3ba62d0-1163-45aa-860b-ae7216239718"
+					}, {
+						"title": "分离",
+						"id": "6c2fcbea-a222-4998-b916-5b2559c2b231"
+					}]
+				}
+			}, {
+				"id": "67ddbcb1-85c9-4478-a0aa-580e9fdcd971",
+				"title": "工具栏",
+				"children": {
+					"attached": [{
+						"title": "关系线",
+						"id": "a47b36ae-49aa-4e26-9377-5f0dfd675e24"
+					}, {
+						"title": "给主题添加备注",
+						"id": "50275976-4108-4659-96d1-3625dbefe496",
+						"notes": {
+							"plain": {
+								"content": "add a note here"
+							},
+							"ops": {
+								"ops": [{
+									"insert": "add a note here\n"
+								}]
+							},
+							"html": {
+								"content": {
+									"paragraphs": [{
+										"spans": [{
+											"text": "add a note here"
+										}]
+									}]
+								}
+							}
+						}
+					}, {
+						"title": "代办事项清单",
+						"id": "b53c3d9d-12e2-4509-bcb6-53a6aa48d96d",
+						"children": {
+							"attached": [{
+								"title": "待完成",
+								"id": "ce5edc6c-b4f9-45eb-99d7-1c3be58e9851"
+							}, {
+								"title": "已完成",
+								"id": "f850895b-168f-4da7-8ec5-028a4ef31be8"
+							}, {
+								"title": "被取消",
+								"id": "cf82be82-4cb6-494c-8ff2-9533fc2aceb3"
+							}]
+						}
+					}, {
+						"title": "星标",
+						"id": "c5ea7ab0-887d-4f72-bd1b-2d2cb1b4eb63"
+					}]
+				}
+			}, {
+				"title": "帮助我们改进",
+				"id": "474b5c15-915c-426e-9fdc-b6713b50799e",
+				"children": {
+					"attached": [{
+						"title": "lighten-support@xmind.net",
+						"id": "c41efdae-0a78-4aa2-8e22-28dad26d970f"
+					}]
+				}
+			}, {
+				"title": "分享",
+				"id": "11fff8b0-e704-497c-ba15-880992561f10",
+				"children": {
+					"attached": [{
+						"title": "纯文本",
+						"id": "2a68fb4c-774a-4639-8baf-6376af96e73e"
+					}, {
+						"title": "图片",
+						"id": "68d7b2fa-039b-4387-a4e3-16a2ea04f5af"
+					}, {
+						"title": "PDF",
+						"id": "ec27c2d9-62b8-424f-a433-5878ecc5e0ba"
+					}, {
+						"title": "文件",
+						"id": "4d6221ea-8721-4797-93b0-b733bee2dc7c"
+					}]
+				}
+			}, {
+				"title": "样式",
+				"id": "cb590b05-a477-437f-ab36-74791a6b9e81",
+				"children": {
+					"attached": [{
+						"title": "5个漂亮的主题样式",
+						"id": "0d7e5694-e505-4d07-94c6-a0cb2eaf8cb5"
+					}, {
+						"title": "6种骨架",
+						"id": "267eaeb5-725e-4d0d-8a70-cc193f18ee45"
+					}, {
+						"title": "彩虹色",
+						"id": "ce1242d2-4c99-4bdd-bd9b-dbd8528f9f5a"
+					}]
+				}
+			}, {
+				"title": "智能URL显示",
+				"id": "327e1083-b739-475d-840c-7f9fc3711441"
+			}, {
+				"title": "快捷键",
+				"id": "b6e12450-91ad-41b9-8d53-929b44f7dd64"
+			}]
+		},
+		"extensions": [{
+			"content": [{
+				"content": "3",
+				"name": "right-number"
+			}],
+			"provider": "org.xmind.ui.map.unbalanced"
+		}]
+	},
+	"theme": {
+		"id": "db791d1fe94b291056ad2839c5",
+		"importantTopic": {
+			"type": "topic",
+			"properties": {
+				"fo:font-weight": "bold",
+				"fo:color": "#F8F7F7",
+				"svg:fill": "#111111"
+			}
+		},
+		"minorTopic": {
+			"type": "topic",
+			"properties": {
+				"fo:font-weight": "bold",
+				"fo:color": "#F8F7F7",
+				"svg:fill": "#666666"
+			}
+		},
+		"expiredTopic": {
+			"type": "topic",
+			"properties": {
+				"fo:font-style": "italic",
+				"fo:text-decoration": " line-through"
+			}
+		},
+		"boundary": {
+			"properties": {
+				"fo:color": "#FFFFFF",
+				"fo:font-family": "NeverMind",
+				"fo:font-size": "13pt",
+				"fo:font-style": "normal",
+				"fo:font-weight": "700",
+				"line-color": "#F6212D",
+				"svg:fill": "none"
+			},
+			"styleId": "3d5eab6c-f768-4c73-9dc5-ac2795f45013",
+			"type": "boundary"
+		},
+		"calloutTopic": {
+			"properties": {
+				"fo:font-family": "NeverMind",
+				"fo:font-size": "14pt",
+				"fo:font-style": "normal",
+				"fo:font-weight": "600",
+				"fo:color": "#FFFFFF",
+				"svg:fill": "#ADADAD"
+			},
+			"styleId": "3c9c5a2b-e527-4e77-aa96-51b2c73cb4e3",
+			"type": "topic"
+		},
+		"centralTopic": {
+			"properties": {
+				"border-line-width": "0",
+				"fo:font-family": "NeverMind",
+				"fo:font-size": "28pt",
+				"fo:font-style": "normal",
+				"fo:font-weight": "600",
+				"line-color": "#333333",
+				"line-width": "4",
+				"svg:fill": "#F6212D"
+			},
+			"styleId": "c67dfd9d-476c-47bf-a561-49476f742e33",
+			"type": "topic"
+		},
+		"floatingTopic": {
+			"properties": {
+				"border-line-width": "0",
+				"fo:font-family": "NeverMind",
+				"fo:font-size": "16pt",
+				"fo:font-style": "normal",
+				"fo:font-weight": "600",
+				"line-color": "#292929",
+				"line-width": "2",
+				"fo:color": "#FFFFFF",
+				"svg:fill": "#ADADAD"
+			},
+			"styleId": "b34338f8-c30f-4520-9248-a1da562705cb",
+			"type": "topic"
+		},
+		"mainTopic": {
+			"properties": {
+				"border-line-width": "0",
+				"fo:font-family": "NeverMind",
+				"fo:font-size": "20pt",
+				"fo:font-style": "normal",
+				"fo:font-weight": "500",
+				"line-width": "3"
+			},
+			"styleId": "8506cd5f-ad7a-4c4c-a64c-8166a945c78a",
+			"type": "topic"
+		},
+		"map": {
+			"properties": {
+				"svg:fill": "#FFFFFF"
+			},
+			"styleId": "afe4154f-100a-49c3-9009-900be28ca289",
+			"type": "map"
+		},
+		"relationship": {
+			"properties": {
+				"arrow-begin-class": "org.xmind.arrowShape.none",
+				"arrow-end-class": "org.xmind.arrowShape.triangle",
+				"fo:color": "#292929",
+				"fo:font-family": "NeverMind",
+				"fo:font-size": "14pt",
+				"fo:font-style": "normal",
+				"fo:font-weight": "normal",
+				"line-color": "#292929",
+				"line-pattern": "dash"
+			},
+			"styleId": "1ac21f4e-6b09-42fc-a309-e75c8a988f83",
+			"type": "relationship"
+		},
+		"subTopic": {
+			"properties": {
+				"border-line-width": "0",
+				"fo:color": "#333333",
+				"fo:font-family": "NeverMind",
+				"fo:font-size": "14pt",
+				"fo:font-style": "normal",
+				"fo:font-weight": "500",
+				"shape-class": "org.xmind.topicShape.roundedRect",
+				"fo:text-align": "left",
+				"svg:fill": "#F8F7F7"
+			},
+			"styleId": "a331a2ef-4979-4f11-8fe3-d4bcc95c1fe2",
+			"type": "topic"
+		},
+		"summary": {
+			"properties": {
+				"line-color": "#292929",
+				"line-width": "2",
+				"shape-class": "org.xmind.summaryShape.round"
+			},
+			"styleId": "751cad1a-a7dd-46d7-ad49-2b864e9af36d",
+			"type": "summary"
+		},
+		"summaryTopic": {
+			"properties": {
+				"border-line-width": "0",
+				"fo:font-family": "NeverMind",
+				"fo:font-size": "16pt",
+				"fo:font-style": "normal",
+				"fo:font-weight": "600",
+				"line-class": "org.xmind.branchConnection.curve",
+				"line-width": "2",
+				"svg:fill": "#4051B5"
+			},
+			"styleId": "443dd197-6151-43ef-8f4b-11b61fed11fe",
+			"type": "topic"
+		}
+	},
+	"topicPositioning": "fixed"
+}]
