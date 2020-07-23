@@ -10,8 +10,8 @@ import UIKit
 
 class XButton: UIButton {
     var id = ""
-    var index = 0
-    var level = 0
+//    var index = 0
+//    var level = 0
     var type = 0
     var path = "" // 存储路径
     

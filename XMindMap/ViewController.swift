@@ -147,29 +147,7 @@ class ViewController: UIViewController,UIScrollViewDelegate{
            self.scrollView.contentSize = CGSize(width: 2000, height: height)
        }
 
-       /// 初始化设置节点、获取叶子节点数据
-      ///
-      /// - Parameters:
-      ///   - array: 节点数组
-      ///   - index: 深度
-      ///   - type: 0 right 1 left
-      func resetData(array:NSMutableArray,index:Int,type:Int)  {
-    
-          for node in array{
-
-              if let node:XNode = node as? XNode {
-                  node.reset()
-                  if let array:NSMutableArray = node.children?.attached{
-                      var index1 = index
-                      index1 += 1
-                      self.resetData(array: array,index: index1,type:type)
-                      
-                  }
-              }
-              
-          }
-
-      }
+       
        
        /// 初始化设置节点、获取叶子节点数据
        ///
@@ -293,7 +271,7 @@ class ViewController: UIViewController,UIScrollViewDelegate{
            for node in array{
 
                if let node:XNode = node as? XNode {
-                      let nodeBtn = self.getButton(id: node.id, index: index, level: node.level,type: type)
+                      let nodeBtn = self.getButton(id: node.id, index: index,type: type)
                       nodeBtn.path = node.path
                       nodeBtn.setTitle(node.title, for: .normal)
                       var height = 0.0// 每个按钮分配的高度
@@ -389,86 +367,8 @@ class ViewController: UIViewController,UIScrollViewDelegate{
        
 
        
-       func getButton(id:String,index:Int,level:Int,type:Int) -> XButton {
-           
-           let nodeBtn = XButton(type: .custom)
-           nodeBtn.setTitleColor(UIColor.white, for: .normal)
-           nodeBtn.backgroundColor = getRandomColor()
-           nodeBtn.layer.cornerRadius = 8
-           nodeBtn.id = id
-           nodeBtn.index = index
-           nodeBtn.level = level
-           nodeBtn.type = type
-           nodeBtn.tag = type
-           if nodeBtn.path.count > 0 {
-               nodeBtn.path = nodeBtn.path + "," + String(index)
-           }else{
-               nodeBtn.path = String(index)
-           }
-           nodeBtn.addTarget(self, action: #selector(alertAction(sender:)), for: .touchUpInside)
-           return nodeBtn
-       }
-       @objc func alertAction(sender:XButton) -> Void {
-           let alertVc = UIAlertController(title: "确定要删除【" + (sender.titleLabel?.text)! + "】吗？", message: "", preferredStyle: .alert)
-           let cancleAction = UIAlertAction(title: "取消", style: .cancel) { (action) in
-               
-           }
-           alertVc.addAction(cancleAction)
-           let okAction = UIAlertAction(title: "确定", style: .default) { (action) in
-               sender.removeFromSuperview()
-    
-               if sender.type == 0{
-                   
-                   
-                   self.deleteAction(array: self.rightArray,id: sender.id,path: sender.path,type: sender.type)
-               }else{
-                   self.deleteAction(array: self.leftArray,id: sender.id,path: sender.path,type: sender.type)
-               }
-               
-           }
-           alertVc.addAction(okAction)
-           
-           self.present(alertVc, animated: true, completion: nil)
-       }
-       func deleteAction(array:NSMutableArray,id:String,path:String,type:Int) -> Void {
-           var strArray = path.components(separatedBy: "-")
-           let index:String = strArray[0]
-           let node = array[Int(index)!]
-           if let node:XNode = node as? XNode {
-               if node.id == id {
-                   array.removeObject(at: Int(index)!)
-                   if type == 0 {
-                       // 也可以直接遍历删除
-                       self.resetData(array: self.rightArray, index: 1,type: 0)
-                       self.resetRight()
-                       self.drawRight()
-                   }else{
-                       self.resetData(array: self.leftArray, index: 1,type: 1)
-                       self.resetLeft()
-                       self.drawLeft()
-                   }
-                   
-                   return
-               }else
-               {
-                   if let array:NSMutableArray = node.children?.attached{
-                       strArray.removeFirst()
-                       let str = strArray.joined(separator: "-")
-
-                       self.deleteAction(array: array, id: id, path: str,type: type)
-                   }
-
-               }
-           }
-           
-       }
        
-       func getRandomColor() -> UIColor {
-           let hue = CGFloat(arc4random() % 256)/256.0
-           let saturation = CGFloat(arc4random() % 128) / 256.0 + 0.5
-           let brightness = CGFloat(arc4random() % 128) / 256.0  + 0.5
-           return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1);
-       }
+       
 
 
 }
