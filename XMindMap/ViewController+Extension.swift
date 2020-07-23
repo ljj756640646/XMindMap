@@ -115,11 +115,11 @@ extension ViewController{
                         array.add(node)
                     }else{
                         let attached = XAttachedModel()
-                        attached.attached.add(node)
+                        attached.attached.insert(node, at: Int(index)!)
                         dNode.children = attached
                     }
                 }else{
-                    array.add(node)
+                    array.insert(node, at: Int(index)!)
                 }
                 
                 
