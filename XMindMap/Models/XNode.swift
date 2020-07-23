@@ -22,6 +22,8 @@ class XAttachedModel {
             attached.add(node)
             //index += 1
         }
+    }
+    init() {
         
     }
     
@@ -91,6 +93,10 @@ class XNode {
             
         }
         
+    }
+    init(id:String,title:String) {
+        self.id = id
+        self.title = title
     }
 }
 

@@ -10,7 +10,7 @@ import Foundation
 
 extension Bundle{
     static func fetch() -> Dictionary<String,Any>? {
-        let path = Bundle.main.path(forResource: "content1", ofType: "json")
+        let path = Bundle.main.path(forResource: "content", ofType: "json")
         let url = URL(fileURLWithPath: path!)
         do {
             let data = try Data(contentsOf: url)

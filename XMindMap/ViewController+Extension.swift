@@ -14,30 +14,55 @@ extension ViewController{
     
     /// 弹框
    @objc func alertAction(sender:XButton) -> Void {
-       let alertVc = UIAlertController(title: "管理【" + (sender.titleLabel?.text)! + "】", message: "", preferredStyle: .alert)
+       let alertVc = UIAlertController(title: "【" + (sender.titleLabel?.text)! + "】", message: "", preferredStyle: .alert)
        let cancleAction = UIAlertAction(title: "取消", style: .cancel) { (action) in
            
        }
        alertVc.addAction(cancleAction)
-       let deleteAction = UIAlertAction(title: "删除", style: .default) { (action) in
-           sender.removeFromSuperview()
-
-           if sender.type == 0{
-               self.deleteAction(array: self.rightArray,id: sender.id,path: sender.path,type: sender.type)
-           }else{
-               self.deleteAction(array: self.leftArray,id: sender.id,path: sender.path,type: sender.type)
-           }
-           
-       }
-       alertVc.addAction(deleteAction)
     
+      let value = String(arc4random() % 10000)
       let addAction = UIAlertAction(title: "添加子节点", style: .default) { (action) in
-          
+            if sender.type == 0{
+
+                let node = XNode(id: "b89f0114-100c-4eaf-8b87-c6b4e15016cdc" + value, title: "添加子节点")
+                self.addAction(node: node, array: self.rightArray, id: sender.id, path: sender.path, type: sender.type,isSon: true)
+            }else{
+                let node = XNode(id: "b89f0114-100c-4eaf-8b87-c6b4e15016cdc" + value, title: "添加子节点")
+                self.addAction(node: node, array: self.leftArray, id: sender.id, path: sender.path, type: sender.type,isSon: true)
+            }
       }
       alertVc.addAction(addAction)
     
-      let editAction = UIAlertAction(title: "修改节点", style: .default) { (action) in
+    
+      let addPreviousAction = UIAlertAction(title: "添加同级节点", style: .default) { (action) in
+            if sender.type == 0{
+                
+                let node = XNode(id: "b89f0114-100c-4eaf-8b87-c6b4e15016cdc" + value, title: "添加同级节点")
+                self.addAction(node: node, array: self.rightArray, id: sender.id, path: sender.path, type: sender.type,isSon: false)
+            }else{
+                let node = XNode(id: "b89f0114-100c-4eaf-8b87-c6b4e15016cdc" + value, title: "添加同级节点")
+                self.addAction(node: node, array: self.leftArray, id: sender.id, path: sender.path, type: sender.type,isSon: false)
+            }
+     }
+     alertVc.addAction(addPreviousAction)
+    
+      let deleteAction = UIAlertAction(title: "删除", style: .default) { (action) in
         
+            if sender.type == 0{
+                self.deleteAction(array: self.rightArray,id: sender.id,path: sender.path,type: sender.type)
+            }else{
+                self.deleteAction(array: self.leftArray,id: sender.id,path: sender.path,type: sender.type)
+            }
+            
+       }
+       alertVc.addAction(deleteAction)
+    
+      let editAction = UIAlertAction(title: "修改节点", style: .default) { (action) in
+        if sender.type == 0{
+            self.editAction(array: self.rightArray,id: sender.id,path: sender.path,type: sender.type)
+        }else{
+            self.editAction(array: self.leftArray,id: sender.id,path: sender.path,type: sender.type)
+        }
       }
       alertVc.addAction(editAction)
        
@@ -77,13 +102,27 @@ extension ViewController{
         }
         
     }
-    func addAction(node:XNode,array:NSMutableArray,id:String,path:String,type:Int) -> Void {
+    // 添加节点
+    func addAction(node:XNode,array:NSMutableArray,id:String,path:String,type:Int,isSon:Bool) -> Void {
         var strArray = path.components(separatedBy: "-")
         let index:String = strArray[0]
         let dNode = array[Int(index)!]
         if let dNode:XNode = dNode as? XNode {
             if dNode.id == id {
-                array.removeObject(at: Int(index)!)
+                
+                if isSon == true{
+                    if let array:NSMutableArray = dNode.children?.attached{
+                        array.add(node)
+                    }else{
+                        let attached = XAttachedModel()
+                        attached.attached.add(node)
+                        dNode.children = attached
+                    }
+                }else{
+                    array.add(node)
+                }
+                
+                
                 if type == 0 {
                     // 也可以直接遍历删除
                     self.resetData(array: self.rightArray, index: 1,type: 0)
@@ -102,9 +141,45 @@ extension ViewController{
                     strArray.removeFirst()
                     let str = strArray.joined(separator: "-")
 
-                    self.addAction(node:node,array: array, id: id, path: str,type: type)
+                    self.addAction(node:node,array: array, id: id, path: str,type: type,isSon: isSon)
                 }
 
+            }
+        }
+    }
+    
+    // 修改节点
+    func editAction(array:NSMutableArray,id:String,path:String,type:Int) -> Void {
+        var strArray = path.components(separatedBy: "-")
+        let index:String = strArray[0]
+        let dNode = array[Int(index)!]
+        if let dNode:XNode = dNode as? XNode {
+            if dNode.id == id {
+                
+                
+                dNode.title = "修改节点"
+                
+                if type == 0 {
+                    // 也可以直接遍历删除
+                    self.resetData(array: self.rightArray, index: 1,type: 0)
+                    self.resetRight()
+                    self.drawRight()
+                }else{
+                    self.resetData(array: self.leftArray, index: 1,type: 1)
+                    self.resetLeft()
+                    self.drawLeft()
+                }
+                
+                return
+            }else
+            {
+                if let array:NSMutableArray = dNode.children?.attached{
+                    strArray.removeFirst()
+                    let str = strArray.joined(separator: "-")
+                    
+                    self.editAction(array: array, id: id, path: str,type: type)
+                }
+                
             }
         }
     }

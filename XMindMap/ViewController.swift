@@ -143,8 +143,9 @@ class ViewController: UIViewController,UIScrollViewDelegate{
            let centerY = height/2.0
            self.rootButton.center = CGPoint(x: 1000, y: centerY)
 
-           self.scrollView.frame = CGRect(x: 0.0, y: 0.0, width: Double(UIScreen.main.bounds.width), height: height)
+           self.scrollView.frame = CGRect(x: 0.0, y: 0.0, width: Double(UIScreen.main.bounds.width), height: Double(UIScreen.main.bounds.height))
            self.scrollView.contentSize = CGSize(width: 2000, height: height)
+           self.scrollView.setContentOffset(CGPoint(x: 800, y: 0), animated: true)
        }
 
        
