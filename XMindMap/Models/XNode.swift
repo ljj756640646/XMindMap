@@ -17,10 +17,7 @@ class XAttachedModel {
         //var index = 0
         for dic in array{
             let node = XNode(dic: dic as! Dictionary<String, Any>)
-            //node.siblingCount = array.count
-            //node.index = index
             attached.add(node)
-            //index += 1
         }
     }
     init() {
@@ -49,6 +46,10 @@ class XNode {
     var nodeBtn_y_height = 0.0
     var nodeBtn_y = 0.0
     var nodeBtn_height = 0.0
+    var nodeBtn_width = 0.0
+    var nodeBtn_centerY = 0.0
+    
+    
     
     var superNode:XNode?
     var previousNode:XNode?

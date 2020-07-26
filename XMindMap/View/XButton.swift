@@ -14,6 +14,8 @@ class XButton: UIButton {
 //    var level = 0
     var type = 0
     var path = "" // 存储路径
+    var x = 0.0
+    
     
     
 }
