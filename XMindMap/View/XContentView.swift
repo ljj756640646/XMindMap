@@ -66,6 +66,22 @@ class XContentView: UIView {
         self.addSubview(rightView)
         
         
+        
+        self.resetHight()
+        
+        
+        // 增删改查
+        self.rightView.completeClosure = { [weak self](sender) in
+            self?.alertAction(sender: sender)
+        }
+        self.leftView.completeClosure = { [weak self](sender) in
+            self?.alertAction(sender: sender)
+        }
+        
+        
+    }
+    
+    func resetHight() -> Void {
         var height = 0.0
         if (rightView.frame.size.height > leftView.frame.size.height){
             height = Double(rightView.frame.size.height)
@@ -84,18 +100,6 @@ class XContentView: UIView {
         self.rightView.frame = CGRect(x: self.rootButton.frame.origin.x + self.rootButton.frame.size.width, y: self.rootButton.center.y - ( rightView.frame.size.height/2) , width: rightView.frame.size.width, height: rightView.frame.size.height)
         
         self.leftView.frame = CGRect(x: self.rootButton.frame.origin.x - 1000, y: self.rootButton.center.y - ( leftView.frame.size.height/2) , width: leftView.frame.size.width, height: leftView.frame.size.height)
-        
-        
-        
-        // 增删改查
-        self.rightView.completeClosure = { [weak self](sender) in
-            self?.alertAction(sender: sender)
-        }
-        self.leftView.completeClosure = { [weak self](sender) in
-            self?.alertAction(sender: sender)
-        }
-        
-        
     }
     
     override init(frame: CGRect) {

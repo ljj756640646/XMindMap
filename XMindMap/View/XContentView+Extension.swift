@@ -87,7 +87,7 @@ extension XContentView{
                     self.resetData(array: self.leftArray, index: 1,type: 1)
                     self.leftView.reloadData()
                 }
-                
+                self.resetHight()
                 return
             }else
             {
@@ -115,7 +115,7 @@ extension XContentView{
                         array.add(node)
                     }else{
                         let attached = XAttachedModel()
-                        attached.attached.insert(node, at: Int(index)!)
+                        attached.attached.add(node)
                         dNode.children = attached
                     }
                 }else{
@@ -131,7 +131,7 @@ extension XContentView{
                     self.resetData(array: self.leftArray, index: 1,type: 1)
                     self.leftView.reloadData()
                 }
-                
+                self.resetHight()
                 return
             }else
             {
@@ -165,7 +165,7 @@ extension XContentView{
                     self.resetData(array: self.leftArray, index: 1,type: 1)
                     self.leftView.reloadData()
                 }
-                
+                self.resetHight()
                 return
             }else
             {
